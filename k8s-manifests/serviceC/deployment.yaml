@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: servicec
+  name: servicec
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicec
+  template:
+    metadata:
+      labels:
+        app: servicec
+    spec:
+      containers:
+      - image: hzhyvinskyi/bch-servicec:0.0.1
+        name: servicec
